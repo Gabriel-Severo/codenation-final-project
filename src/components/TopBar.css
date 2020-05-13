@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    background: #f0f0f0aa;
+    height: 70px;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.header__logo {
+    width: 120px;
+    height: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 25px;
+}
+
+.header__icons {
+    width: 65px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__icons--search, .header__icons--cart {
+    background: none;
+    border: none;
+    outline: none;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+}
