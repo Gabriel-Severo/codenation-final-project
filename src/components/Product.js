@@ -5,7 +5,7 @@ class Product extends React.Component{
         return(
             <div className="product__box">
                 <div className="product__image">
-                    {this.props.product.image && <img src={this.props.product.image} alt={this.props.product.name}/>}
+                     <img src={this.props.product.image ? this.props.product.image : 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel'} alt={this.props.product.name}/>
                 </div>
                 <div className="product__info">
                     <h3 className="product__name">{this.props.product.name}</h3>
