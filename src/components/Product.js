@@ -5,11 +5,11 @@ class Product extends React.Component{
         return(
             <div className="product__box">
                 <div className="product__image">
-                    <img src="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912" alt="VESTIDO TRANSPASSE BOW"/>
+                    {this.props.product.image && <img src={this.props.product.image} alt={this.props.product.name}/>}
                 </div>
                 <div className="product__info">
-                    <h3 className="product__name">VESTIDO TRANSPASSE BOW</h3>
-                    <span className="product__price">R$ 199,90</span>
+                    <h3 className="product__name">{this.props.product.name}</h3>
+                    <span className="product__price">{this.props.product.regular_price}</span>
                 </div>
             </div>
         )

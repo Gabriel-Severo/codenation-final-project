@@ -9,12 +9,12 @@ class TopBar extends React.Component{
                 <a href="/" className="header__logo">
                     <p>Fashionista</p>
                 </a>
-                <div class="header__icons">
+                <div className="header__icons">
                     <button className="header__icons--search">
-                        <i class="fas fa-search"></i>
+                        <i className="fas fa-search"></i>
                     </button>
                     <button className="header__icons--cart">
-                        <i class="fas fa-cart-plus"></i>
+                        <i className="fas fa-cart-plus"></i>
                     </button>
                 </div>
             </div>

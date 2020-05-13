@@ -9,7 +9,9 @@ class Products extends React.Component{
                 <div className="container">
                     <div className="number__items">22 items</div>
                     <div className="products__grid">
-                        <Product/>
+                        {this.props.products && this.props.products.map((product, index) => {
+                            return <Product key={index} product={product}/>
+                        })}
                     </div>
                 </div>
             </section>
