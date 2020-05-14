@@ -6,13 +6,13 @@
     margin-top: 5px;
 }
 
-.product__image{
+.image__box{
     height: 80%;
     width: 100%;
     position: relative;
 }
 
-.product__image img{
+.product__image{
     height: 100%;
     width: 100%;
 }
