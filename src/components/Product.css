@@ -18,6 +18,12 @@
     width: 100%;
 }
 
+.discount {
+    position: absolute;
+    right: 0;
+    background: #dddd;
+}
+
 .product__info {
     background: #fee;
     height: 20%;
@@ -28,12 +34,19 @@
     flex-direction: column;
 }
 
-.product__info h3 {
+.product__name {
     font-size: 15px;
 }
 
-.discount {
-    position: absolute;
-    right: 0;
-    background: #dddd;
+.product__prices {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #aaad;
+    margin-right: 10px;
+    font-size: 15px;
 }
