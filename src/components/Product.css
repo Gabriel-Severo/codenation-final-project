@@ -1,9 +1,8 @@
 .product__box {
-    width: 22%;
-    height: 400px;
+    width: 98%;
+    height: 450px;
     display: flex;
     flex-direction: column;
-    margin-right: 5px;
     margin-top: 5px;
 }
 
