@@ -7,7 +7,7 @@ class Products extends React.Component{
         return(
             <section className="products">
                 <div className="container">
-                    <div className="number__items">22 items</div>
+                    <div className="number__items">{this.props.products.length} items</div>
                     <div className="products__grid">
                         {this.props.products && this.props.products.map((product, index) => {
                             return <Product key={index} product={product}/>
