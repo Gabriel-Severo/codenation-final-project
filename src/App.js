@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import TopBar from './components/TopBar'
 import Products from './components/Products'
+import Search from './components/Search'
 
 class App extends React.Component {
   constructor(){
@@ -19,6 +20,7 @@ class App extends React.Component {
       <React.Fragment>
         <TopBar/>
         <Products products={this.state.products}/>
+        <Search/>
       </React.Fragment>
     )
   }
