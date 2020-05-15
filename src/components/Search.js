@@ -40,9 +40,9 @@ class Search extends React.Component {
                     <input onChange={e => {this.handleSearch(e)}} className="search__input" placeholder="Buscar por produto..." type="text"/>
                 </div>
                 <div className="search__results">
-                    {this.props.products && this.state.products.map(product => {
+                    {this.state.products.length ? this.state.products.map(product => {
                         return <Result key={product.code_color} product={product}/>
-                    })}
+                    }): <div class="product__notfound">Nenhum item encontrado :\</div>}
                 </div>
             </div>
         )

@@ -73,3 +73,8 @@
 .product__result__installments {
     text-align: right;
 }
+
+.product__notfound {
+    margin: 10px auto;
+    color: #0f0f0f88;
+}
