@@ -2,6 +2,12 @@ import React from 'react'
 import './TopBar.css'
 
 class TopBar extends React.Component{
+
+    handleOpenSearch(event){
+        event.preventDefault()
+        document.querySelector('.search__modal').classList.remove('modal__hidden')
+    }
+
     render(){
         return (
         <header>
@@ -10,7 +16,7 @@ class TopBar extends React.Component{
                     <p>Fashionista</p>
                 </a>
                 <div className="header__icons">
-                    <button className="header__icons--search">
+                    <button onClick={e => {this.handleOpenSearch(e)}} className="header__icons--search">
                         <i className="fas fa-search"></i>
                     </button>
                     <button className="header__icons--cart">

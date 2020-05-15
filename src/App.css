@@ -8,3 +8,8 @@
 body {
     background: #dfdfdf;
 }
+
+.modal__hidden {
+    right: -100% !important;
+    opacity: 0;
+}

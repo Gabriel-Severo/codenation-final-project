@@ -6,6 +6,8 @@
     height: 100vh;
     background: #eee;
     overflow-y: auto;
+    transition: all 0.5s linear;
+    overflow-x: hidden;
 }
 
 .search__top {

@@ -20,7 +20,7 @@ class App extends React.Component {
       <React.Fragment>
         <TopBar/>
         <Products products={this.state.products}/>
-        <Search/>
+        <Search products={this.state.products}/>
       </React.Fragment>
     )
   }
