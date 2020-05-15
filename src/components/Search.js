@@ -1,5 +1,6 @@
 import React from 'react'
 import './Search.css'
+import Result from './Result'
 
 class Search extends React.Component {
     render(){
@@ -15,16 +16,7 @@ class Search extends React.Component {
                     <input className="search__input" placeholder="Buscar por produto..." type="text"/>
                 </div>
                 <div className="search__results">
-                    <div className="product__result">
-                        <div className="product__result__image">
-                            <img className="product__image" src="https://d3l7rqep7l31az.cloudfront.net/images/products/20001609_002_catalog_1.jpg?" alt="Produto"/>
-                        </div>
-                        <div className="product__result__name">VESTIDO FRANZIDO RECORTES</div>
-                        <div className="product__result__prices">
-                            <div className="product__result__price">R$ 69,90</div>
-                            <div className="product__result__installments">2x R$ 34,95</div>
-                        </div>
-                    </div>
+                    <Result/>
                 </div>
             </div>
         )
