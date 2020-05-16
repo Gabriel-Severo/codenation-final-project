@@ -49,7 +49,7 @@
     flex-wrap: nowrap;
     overflow-y: auto;
     width: 400px;
-    height: 85%;
+    height: calc(100% - 100px);
 }
 
 .modal__search__hidden {

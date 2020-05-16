@@ -1,6 +1,6 @@
 import React from 'react'
-import './Result.css'
-class Result extends React.Component {
+import './SearchResult.css'
+class SearchResult extends React.Component {
     render() {
         return (
             <div className="product__result">
@@ -17,4 +17,4 @@ class Result extends React.Component {
     }
 }
 
-export default Result
+export default SearchResult

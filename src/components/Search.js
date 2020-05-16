@@ -1,6 +1,6 @@
 import React from 'react'
 import './Search.css'
-import Result from './Result'
+import SearchResult from './SearchResult'
 
 class Search extends React.Component {
 
@@ -42,8 +42,8 @@ class Search extends React.Component {
                 </div>
                 <div className="search__results">
                     {this.state.products.length ? this.state.products.map(product => {
-                        return <Result key={product.code_color} product={product}/>
-                    }): <div class="product__notfound">Nenhum item encontrado :\</div>}
+                        return <SearchResult key={product.code_color} product={product}/>
+                    }): <div className="product__notfound">Nenhum item encontrado :\</div>}
                 </div>
             </div>
         )
