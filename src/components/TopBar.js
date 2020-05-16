@@ -5,7 +5,13 @@ class TopBar extends React.Component{
 
     handleOpenSearch(event){
         event.preventDefault()
-        document.querySelector('.search__modal').classList.remove('modal__hidden')
+        document.querySelector('.search__modal').classList.remove('modal__search__hidden')
+        document.querySelector('.app').classList.add('blur')
+    }
+
+    handleOpenCart(event){
+        event.preventDefault()
+        document.querySelector('.cart__modal').classList.remove('modal__cart__hidden')
         document.querySelector('.app').classList.add('blur')
     }
 
@@ -20,7 +26,7 @@ class TopBar extends React.Component{
                     <button onClick={e => {this.handleOpenSearch(e)}} className="header__icons--search">
                         <i className="fas fa-search"></i>
                     </button>
-                    <button className="header__icons--cart">
+                    <button onClick={e => {this.handleOpenCart(e)}} className="header__icons--cart">
                         <i className="fas fa-cart-plus"></i>
                     </button>
                 </div>

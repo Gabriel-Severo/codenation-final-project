@@ -19,8 +19,3 @@ body {
     left: 0;
     z-index: 2;
 }
-
-.modal__hidden {
-    right: -100% !important;
-    opacity: 0;
-}

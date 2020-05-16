@@ -11,7 +11,7 @@ class Search extends React.Component {
 
     handleCloseSearch(event){
         event.preventDefault()
-        document.querySelector('.search__modal').classList.add('modal__hidden')
+        document.querySelector('.search__modal').classList.add('modal__search__hidden')
         document.querySelector('.app').classList.remove('blur')
     }
 
@@ -30,7 +30,7 @@ class Search extends React.Component {
 
     render(){
         return (
-            <div className="search__modal modal__hidden">
+            <div className="search__modal modal__search__hidden">
                 <div className="search__top">
                     <button onClick={e => {this.handleCloseSearch(e)}} className="return__button">
                         <i className="fas fa-arrow-left"></i>

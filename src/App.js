@@ -3,6 +3,7 @@ import './App.css';
 import TopBar from './components/TopBar'
 import Products from './components/Products'
 import Search from './components/Search'
+import Cart from './components/Cart'
 
 class App extends React.Component {
   constructor(){
@@ -22,6 +23,7 @@ class App extends React.Component {
           <TopBar/>
           <Products products={this.state.products}/>
           <Search products={this.state.products}/>
+          <Cart/>
         </div>
       </React.Fragment>
     )

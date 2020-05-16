@@ -1,0 +1,31 @@
+.product__result {
+    height: 110px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    width: 360px;
+    margin: 10px auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product__result__image {
+    width: 70px;
+    height: 100px;
+}
+
+.product__result__name {
+    font-size: 12px;
+    font-weight: bold;
+}
+.product__result__price {
+    font-weight: bold;
+    text-align: right;
+}
+
+.product__result__installments {
+    text-align: right;
+}
+
+.product__notfound {
+    margin: 10px auto;
+    color: #0f0f0f88;
+}
