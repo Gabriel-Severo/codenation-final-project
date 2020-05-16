@@ -8,8 +8,8 @@
     overflow-y: auto;
     transition: all 0.5s linear;
     overflow-x: hidden;
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    z-index: 2;
+    border-left: 1px solid rgba(0, 0, 0, 0.7);
+    z-index: 1;
 }
 
 .search__top {
