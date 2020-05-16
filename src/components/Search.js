@@ -12,6 +12,7 @@ class Search extends React.Component {
     handleCloseSearch(event){
         event.preventDefault()
         document.querySelector('.search__modal').classList.add('modal__hidden')
+        document.querySelector('.app').classList.remove('blur')
     }
 
     handleSearch(event){

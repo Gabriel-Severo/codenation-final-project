@@ -18,9 +18,11 @@ class App extends React.Component {
   render(){
     return (
       <React.Fragment>
-        <TopBar/>
-        <Products products={this.state.products}/>
-        <Search products={this.state.products}/>
+        <div class="app">
+          <TopBar/>
+          <Products products={this.state.products}/>
+          <Search products={this.state.products}/>
+        </div>
       </React.Fragment>
     )
   }

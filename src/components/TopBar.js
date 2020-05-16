@@ -6,6 +6,7 @@ class TopBar extends React.Component{
     handleOpenSearch(event){
         event.preventDefault()
         document.querySelector('.search__modal').classList.remove('modal__hidden')
+        document.querySelector('.app').classList.add('blur')
     }
 
     render(){

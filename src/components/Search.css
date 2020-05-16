@@ -8,6 +8,8 @@
     overflow-y: auto;
     transition: all 0.5s linear;
     overflow-x: hidden;
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    z-index: 2;
 }
 
 .search__top {
@@ -22,6 +24,7 @@
     margin: 0 15px;
     background: none;
     outline: none;
+    cursor: pointer;
 }
 
 .search__form {
