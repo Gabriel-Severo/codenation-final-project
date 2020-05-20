@@ -1,3 +1,8 @@
+.products a {
+    text-decoration: none;
+    color: black;
+}
+
 .product__box {
     width: 98%;
     height: 450px;

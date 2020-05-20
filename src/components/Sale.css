@@ -16,18 +16,18 @@
 
 .sale__prices {
     display: flex;
-    justify-content: space-between;
-    width: 280px;
+    width: 318px;
 }
 
 .sale__price--new, .sale__price {
     font-size: 15px;
     font-weight: bold;
+    margin-right: 10px;
 }
 
 .sale__price__installments {
     font-weight: bold;
-    font-size: 12px;
+    font-size: 13px;
     color: #999f;
 }
 

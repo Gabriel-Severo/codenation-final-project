@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import './Sale.css'
 
 function Sale() {
     const [products, setProducts] = useState([])
+    const [product, setProduct] = useState({})
     const { id } = useParams(null)
 
     useEffect( () => {
@@ -14,27 +15,46 @@ function Sale() {
         getProducts()
     }, [])
 
+    useEffect(() => {
+        function getProduct(){
+            return products.filter(product => {
+                return product.code_color === id
+            })[0]
+        }
+        setProduct(getProduct())
+    }, [id, products])
+    
     return (
         <div className="sale__box">
             <div className="sale__image">
-                <img src="https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912" alt="Produto"/>
+                <img src={product && product.image ? product.image : 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'} alt="Produto"/>
             </div>
             <div className="sale__info">
-                <span className="sale__name">T-SHIRT LEATHER DULL</span>
+                <span className="sale__name">{product && product.name}</span>
                 <div className="sale__prices">
-                    <span className="sale__price strikethrough">R$ 139,90</span>
-                    <span className="sale__price--new">R$ 119,90</span>
-                    <span className="sale__price__installments">em até 3x R$ 39,97</span>
+                    {product && product.on_sale ?
+                        <>
+                            <span className="sale__price strikethrough">{product && product.regular_price}</span>
+                            <span className="sale__price--new">{product && product.actual_price}</span>
+                            <span className="sale__price__installments">em até {product && product.installments}</span>
+                        </>
+                        :
+                        <>
+                            <span className="sale__price">{product && product.actual_price}</span>
+                            <span className="sale__price__installments">em até {product && product.installments}</span>
+                        </>
+                    }
                 </div>
                 <div className="sale__sizes">
                     <span className="sizes__text">Escolha o tamanho</span>
                     <div className="sale__size__options">
-                        <button className="sale__size sale__size--selected">PP</button>
-                        <button className="sale__size">P</button>
-                        <button className="sale__size">M</button>
+                        {product && product.sizes && product.sizes.map((size, index) => {
+                            return size.available && <button key={index} className="sale__size">{size.size}</button>
+                        })}
                     </div>
                 </div>
                 <button className="sale__addcart">Adicionar à Sacola</button>
+                <Link to="/">Voltar</Link>
             </div>
         </div>
     )
