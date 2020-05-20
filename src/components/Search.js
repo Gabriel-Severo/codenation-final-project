@@ -1,53 +1,47 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './Search.css'
 import SearchResult from './SearchResult'
 
-class Search extends React.Component {
+function Search({allProducts}) {
+    const [products, setProducts] = useState([])
 
-    constructor(){
-        super()
-        this.state = {products: []}
-    }
-
-    handleCloseSearch(event){
+    function handleCloseSearch(event){
         event.preventDefault()
         document.querySelector('.search__modal').classList.add('modal__search__hidden')
         document.querySelector('.app').classList.remove('blur')
     }
 
-    handleSearch(event){
+    function handleSearch(event){
         event.preventDefault()
         const text = event.target.value
-        if (event.target.value){
-            const products = this.props.products.filter(product => {
+        if (event.target.value){//Se não digitar nada retorna vazio para não mostrar nenhum produto
+            const products = allProducts.filter(product => {
                 return new RegExp(text, 'i').test(product.name)
             })
-            this.setState({products})
+            setProducts(products)
         }else{
-            this.setState({products: []})
+            setProducts([])
         }
     }
 
-    render(){
-        return (
-            <div className="search__modal modal__search__hidden">
-                <div className="search__top">
-                    <button onClick={e => {this.handleCloseSearch(e)}} className="return__button">
-                        <i className="fas fa-arrow-left"></i>
-                    </button>
-                    <strong>Buscar Produtos</strong>
-                </div>
-                <div className="search__form">
-                    <input onChange={e => {this.handleSearch(e)}} className="search__input" placeholder="Buscar por produto..." type="text"/>
-                </div>
-                <div className="search__results">
-                    {this.state.products.length ? this.state.products.map(product => {
-                        return <SearchResult key={product.code_color} product={product}/>
-                    }): <div className="product__notfound">Nenhum item encontrado :\</div>}
-                </div>
+    return (
+        <div className="search__modal modal__search__hidden">
+            <div className="search__top">
+                <button onClick={handleCloseSearch} className="return__button">
+                    <i className="fas fa-arrow-left"></i>
+                </button>
+                <strong>Buscar Produtos</strong>
             </div>
-        )
-    }
+            <div className="search__form">
+                <input onChange={handleSearch} className="search__input" placeholder="Buscar por produto..." type="text"/>
+            </div>
+            <div className="search__results">
+                {products.length ? products.map(product => {
+                    return <SearchResult key={product.code_color} product={product}/>
+                }): <div className="product__notfound">Nenhum item encontrado :\</div>}
+            </div>
+        </div>
+    )
 }
 
 export default Search

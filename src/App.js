@@ -21,7 +21,7 @@ function App() {
       <div className="app">
         <TopBar/>
         <Products products={products}/>
-        <Search products={products}/>
+        <Search allProducts={products}/>
         <Cart/>
       </div>
     </React.Fragment>
