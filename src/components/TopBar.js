@@ -1,7 +1,9 @@
 import React from 'react'
 import './TopBar.css'
+import Cart from './Cart'
+import Search from './Search'
 
-function TopBar(){
+function TopBar({products}){
     function handleOpenSearch(event){
         event.preventDefault()
         document.querySelector('.search__modal').classList.remove('modal__search__hidden')
@@ -29,6 +31,8 @@ function TopBar(){
                     </button>
                 </div>
             </div>
+            <Search allProducts={products}/>
+            <Cart/>
         </header>
     )
 }
