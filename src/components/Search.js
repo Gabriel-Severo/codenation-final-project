@@ -36,8 +36,8 @@ function Search({allProducts}) {
                 <input onChange={handleSearch} className="search__input" placeholder="Buscar por produto..." type="text"/>
             </div>
             <div className="search__results">
-                {products.length ? products.map(product => {
-                    return <SearchResult key={product.code_color} product={product}/>
+                {products.length ? products.map((product, index) => {
+                    return <SearchResult key={index} product={product}/>
                 }): <div className="product__notfound">Nenhum item encontrado :\</div>}
             </div>
         </div>
