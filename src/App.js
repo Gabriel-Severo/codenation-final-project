@@ -16,16 +16,16 @@ function App() {
     getProducts()
   }, [])
 
-    return (
-      <React.Fragment>
-        <div className="app">
-          <TopBar/>
-          <Products products={products}/>
-          <Search products={products}/>
-          <Cart/>
-        </div>
-      </React.Fragment>
-    )
+  return (
+    <React.Fragment>
+      <div className="app">
+        <TopBar/>
+        <Products products={products}/>
+        <Search products={products}/>
+        <Cart/>
+      </div>
+    </React.Fragment>
+  )
 }
 
 export default App;
