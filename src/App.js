@@ -1,30 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import './App.css';
-import TopBar from './components/TopBar'
-import Products from './components/Products'
-import Search from './components/Search'
-import Cart from './components/Cart'
+import Home from './components/Home'
 
 function App() {
-  const [products, setProducts] = useState([])
-
-  useEffect( () => {
-    async function getProducts(){
-      const products = await fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog').then(products => products.json())
-      setProducts(products)
-    }
-    getProducts()
-  }, [])
 
   return (
-    <React.Fragment>
-      <div className="app">
-        <TopBar/>
-        <Products products={products}/>
-        <Search allProducts={products}/>
-        <Cart/>
-      </div>
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <Route path='/' exact component={Home}/>
+      </Switch>
+    </Router>
   )
 }
 
