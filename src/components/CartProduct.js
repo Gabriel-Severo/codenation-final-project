@@ -1,10 +1,10 @@
 import React from 'react'
 import './CartProduct.css'
-import {setQuantity} from '../actions'
+import {setQuantity, setCart} from '../actions'
 import {useDispatch, useSelector} from 'react-redux'
 
 function CartProduct({product}) {
-    const {quantity} = useSelector(state => state)
+    const {quantity, cart} = useSelector(state => state)
     const dispatch = useDispatch()
     function handlePlus(event){
         event.preventDefault()
@@ -18,8 +18,17 @@ function CartProduct({product}) {
             product.quantity--
             dispatch(setQuantity(quantity-1))
         }
-
     }
+
+    function handleRemoveProduct(event) {
+        event.preventDefault()
+        dispatch(setQuantity(quantity-product.quantity))
+        console.log(cart)
+        dispatch(setCart(cart.filter(cart => {
+            return cart.code_color !== product.code_color || cart.size !== product.size
+        })))
+    }
+
     return (
         <div className="cart__product">
             <div className="cart__product__image">
@@ -42,7 +51,7 @@ function CartProduct({product}) {
                 <span className="cart__product__price">{product.actual_price}</span>
                 <span className="cart__product__installments">{product.installments}</span>
             </div>
-            <button className="cart__remove__item">Remover Item</button>
+            <button onClick={handleRemoveProduct} className="cart__remove__item">Remover Item</button>
         </div>
     )
 }
