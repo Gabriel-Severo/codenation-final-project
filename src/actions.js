@@ -4,3 +4,10 @@ export function setProducts(products) {
         payload: products
     }
 }
+
+export function setCart(products) {
+    return {
+        type: "SET_CART",
+        payload: products
+    }
+}

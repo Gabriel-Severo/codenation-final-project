@@ -1,7 +1,9 @@
 import React from 'react'
 import './Cart.css'
 import CartProduct from './CartProduct'
+import { useSelector } from 'react-redux'
 function Cart() {
+    const { cart } = useSelector(state => state)
 
     function handleCloseCart(event){
         event.preventDefault()
@@ -15,14 +17,12 @@ function Cart() {
                 <button onClick={handleCloseCart} className="return__button">
                     <i className="fas fa-arrow-left"></i>
                 </button>
-                <strong>Sacola (0)</strong>
+                <strong>Sacola ({cart.length})</strong>
             </div>
             <div className="cart__products">
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
+                {cart.length && cart.map(produto => {
+                    return <CartProduct/>
+                })}
             </div>
             <div className="cart__price">
                 <strong className="cart__price__text">Subtotal - R$ 12162,40</strong>

@@ -1,13 +1,16 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import './Sale.css'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import TopBar from './TopBar'
+import {setCart} from '../actions'
 
 
 function Sale() {
-    const { products } = useSelector(state => state)
+    const { products, cart } = useSelector(state => state)
+    const dispatch = useDispatch()
     const [product, setProduct] = useState({})
+    const [selected, setSelected] = useState('')
     const { id } = useParams(null)
 
     useEffect(() => {
@@ -18,7 +21,35 @@ function Sale() {
         }
         setProduct(getProduct())
     }, [id, products])
-    
+
+    function handleSelected(event) {
+        event.preventDefault()
+        document.querySelector('.sale__size--selected') && document.querySelector('.sale__size--selected').classList.remove('sale__size--selected')
+        event.target.classList.add('sale__size--selected')
+        setSelected(event.target.textContent)
+    }
+
+    function handleAddCart(event) {
+        event.preventDefault()
+
+        let cont = cart.filter(cart=> {
+            return cart.code_color === id && selected === cart.size
+        })
+
+        cont = cont.length ? ++cont[0].cont : ++cont
+
+        console.log(cont)
+        
+        
+        dispatch(setCart([...cart, {
+            name: product.name,
+            code_color: product.code_color,
+            size: selected,
+            cont
+        }]))
+        console.log(cont)
+    }
+
     return (
         <div className="app">
             <TopBar products={products}/>
@@ -46,11 +77,11 @@ function Sale() {
                         <span className="sizes__text">Escolha o tamanho</span>
                         <div className="sale__size__options">
                             {product && product.sizes && product.sizes.map((size, index) => {
-                                return size.available && <button key={index} className="sale__size">{size.size}</button>
+                                return size.available && <button key={index} onClick={handleSelected} className="sale__size">{size.size}</button>
                             })}
                         </div>
                     </div>
-                    <button className="sale__addcart">Adicionar à Sacola</button>
+                    <button onClick={handleAddCart} className="sale__addcart">Adicionar à Sacola</button>
                 </div>
             </div>
         </div>
