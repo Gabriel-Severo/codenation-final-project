@@ -2,6 +2,7 @@ import React from 'react'
 import './TopBar.css'
 import Cart from './Cart'
 import Search from './Search'
+import { Link } from 'react-router-dom'
 
 function TopBar({products}){
     function handleOpenSearch(event){
@@ -19,9 +20,9 @@ function TopBar({products}){
     return (
         <header>
             <div className="content">
-                <a href="/" className="header__logo">
+                <Link to="/" className="header__logo">
                     <p>Fashionista</p>
-                </a>
+                </Link>
                 <div className="header__icons">
                     <button onClick={handleOpenSearch} className="header__icons--search">
                         <i className="fas fa-search"></i>

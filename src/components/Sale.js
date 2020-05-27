@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './Sale.css'
 import { useSelector } from 'react-redux'
 import TopBar from './TopBar'
@@ -51,7 +51,6 @@ function Sale() {
                         </div>
                     </div>
                     <button className="sale__addcart">Adicionar à Sacola</button>
-                    <Link to="/">Voltar</Link>
                 </div>
             </div>
         </div>
