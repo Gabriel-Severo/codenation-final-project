@@ -3,8 +3,7 @@ import './Cart.css'
 import CartProduct from './CartProduct'
 import { useSelector } from 'react-redux'
 function Cart() {
-    const { cart } = useSelector(state => state)
-
+    const { cart, quantity } = useSelector(state => state)
     function handleCloseCart(event){
         event.preventDefault()
         document.querySelector('.cart__modal').classList.add('modal__cart__hidden')
@@ -17,11 +16,11 @@ function Cart() {
                 <button onClick={handleCloseCart} className="return__button">
                     <i className="fas fa-arrow-left"></i>
                 </button>
-                <strong>Sacola ({cart.length})</strong>
+                <strong>Sacola ({quantity})</strong>
             </div>
             <div className="cart__products">
-                {cart.length && cart.map(produto => {
-                    return <CartProduct/>
+                {cart.length && cart.map(product => {
+                    return <CartProduct product={product}/>
                 })}
             </div>
             <div className="cart__price">

@@ -3,11 +3,11 @@ import { useParams } from 'react-router-dom'
 import './Sale.css'
 import { useSelector, useDispatch } from 'react-redux'
 import TopBar from './TopBar'
-import {setCart} from '../actions'
+import {setCart, setQuantity} from '../actions'
 
 
 function Sale() {
-    const { products, cart } = useSelector(state => state)
+    const { products, cart, quantity } = useSelector(state => state)
     const dispatch = useDispatch()
     const [product, setProduct] = useState({})
     const [selected, setSelected] = useState('')
@@ -28,28 +28,29 @@ function Sale() {
         event.target.classList.add('sale__size--selected')
         setSelected(event.target.textContent)
     }
-
+    
     function handleAddCart(event) {
         event.preventDefault()
-
         let cont = cart.filter(cart=> {
             return cart.code_color === id && selected === cart.size
         })
-        cont = cont.length ? ++cont[0].cont : 1
+        cont = cont.length ? ++cont[0].quantity : 1
         if(cont === 1){
             dispatch(setCart([...cart, {
                 name: product.name,
                 code_color: product.code_color,
                 size: selected,
-                cont
+                quantity: cont,
+                actual_price: product.actual_price,
+                installments: product.installments,
+                image: product.image
             }]))
         }else{
-            dispatch(setCart(cart.map(cart => {
-                return cart
-            })))
+            dispatch(setCart(cart))
         }
+        dispatch(setQuantity(quantity+1))
     }
-
+    
     return (
         <div className="app">
             <TopBar products={products}/>

@@ -11,3 +11,10 @@ export function setCart(products) {
         payload: products
     }
 }
+
+export function setQuantity(quantity){
+    return {
+        type: "SET_QUANTITY",
+        payload: quantity
+    }
+}
