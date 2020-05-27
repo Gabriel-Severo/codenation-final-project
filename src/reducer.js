@@ -1,7 +1,8 @@
 const INITIAL_STATE = {
     products: [],
     cart: [],
-    quantity: 0
+    quantity: 0,
+    price: 0
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -20,6 +21,12 @@ function reducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 quantity: action.payload
+            }
+        }
+        case "SET_PRICE": {
+            return {
+                ...state,
+                price: action.payload
             }
         }
         default:

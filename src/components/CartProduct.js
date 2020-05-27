@@ -11,12 +11,12 @@ function CartProduct({product}) {
                 <div className="cart__product__name">{product.name}</div>
                 <div className="cart__product__size">TAM. {product.size}</div>
                 <div className="cart__product__quantity">
-                    <button className="cart__product__add">
-                        <i className="fas fa-plus"></i>
-                    </button>
-                    <span className="cart__product__cont">{product.quantity}</span>
                     <button className="cart__product__remove">
                         <i className="fas fa-minus"></i>
+                    </button>
+                    <span className="cart__product__cont">{product.quantity}</span>
+                    <button className="cart__product__add">
+                        <i className="fas fa-plus"></i>
                     </button>
                 </div>
             </div>

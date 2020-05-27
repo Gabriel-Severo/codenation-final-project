@@ -18,3 +18,10 @@ export function setQuantity(quantity){
         payload: quantity
     }
 }
+
+export function setPrice(price){
+    return {
+        type: "SET_PRICE",
+        payload: price
+    }
+}
