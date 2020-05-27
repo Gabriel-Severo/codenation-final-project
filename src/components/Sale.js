@@ -35,19 +35,19 @@ function Sale() {
         let cont = cart.filter(cart=> {
             return cart.code_color === id && selected === cart.size
         })
-
-        cont = cont.length ? ++cont[0].cont : ++cont
-
-        console.log(cont)
-        
-        
-        dispatch(setCart([...cart, {
-            name: product.name,
-            code_color: product.code_color,
-            size: selected,
-            cont
-        }]))
-        console.log(cont)
+        cont = cont.length ? ++cont[0].cont : 1
+        if(cont === 1){
+            dispatch(setCart([...cart, {
+                name: product.name,
+                code_color: product.code_color,
+                size: selected,
+                cont
+            }]))
+        }else{
+            dispatch(setCart(cart.map(cart => {
+                return cart
+            })))
+        }
     }
 
     return (
