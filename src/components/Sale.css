@@ -5,6 +5,10 @@
     margin-top: 10px;
 }
 
+.sale__image {
+    position: relative;
+}
+
 .sale__info {
     margin-left: 10px;
 }

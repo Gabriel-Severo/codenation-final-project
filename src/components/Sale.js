@@ -64,6 +64,8 @@ function Sale() {
             <TopBar products={products}/>
             <div className="sale__box">
                 <div className="sale__image">
+                    {console.log(product)}
+                    {product && <span className="discount">{product.discount_percentage}</span>}
                     <img src={product && product.image ? product.image : 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'} alt="Produto"/>
                 </div>
                 <div className="sale__info">
