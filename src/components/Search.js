@@ -6,8 +6,7 @@ import {Link} from 'react-router-dom'
 function Search({allProducts}) {
     const [products, setProducts] = useState([])
 
-    function handleCloseSearch(event){
-        event.preventDefault()
+    function handleCloseSearch(){
         document.querySelector('.search__modal').classList.add('modal__search__hidden')
         document.querySelector('.app').classList.remove('blur')
     }
@@ -39,7 +38,7 @@ function Search({allProducts}) {
             <div className="search__results">
                 {products.length ? products.map((product, index) => {
                     const link = `/products/${product.code_color}`
-                    return <Link to={link}>
+                    return <Link onClick={handleCloseSearch} to={link}>
                         <SearchResult key={index} product={product}/>
                     </Link>
                 }): <div className="product__notfound">Nenhum item encontrado :\</div>}
