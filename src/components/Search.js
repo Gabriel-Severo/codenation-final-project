@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './Search.css'
 import SearchResult from './SearchResult'
+import {Link} from 'react-router-dom'
 
 function Search({allProducts}) {
     const [products, setProducts] = useState([])
@@ -37,7 +38,10 @@ function Search({allProducts}) {
             </div>
             <div className="search__results">
                 {products.length ? products.map((product, index) => {
-                    return <SearchResult key={index} product={product}/>
+                    const link = `/products/${product.code_color}`
+                    return <Link to={link}>
+                        <SearchResult key={index} product={product}/>
+                    </Link>
                 }): <div className="product__notfound">Nenhum item encontrado :\</div>}
             </div>
         </div>
