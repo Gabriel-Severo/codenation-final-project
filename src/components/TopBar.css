@@ -36,4 +36,17 @@ header .content {
     height: 30px;
     font-size: 20px;
     cursor: pointer;
+    position: relative;
+}
+
+.cart__quantity {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    color: #aa0000;
+    width: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background: #ddd;
+    font-size: 12px;
 }

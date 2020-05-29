@@ -3,8 +3,10 @@ import './TopBar.css'
 import Cart from './Cart'
 import Search from './Search'
 import { Link } from 'react-router-dom'
+import {useSelector} from 'react-redux'
 
 function TopBar({products}){
+    const {quantity} = useSelector(state => state)
     function handleOpenSearch(event){
         event.preventDefault()
         document.querySelector('.search__modal').classList.remove('modal__search__hidden')
@@ -28,6 +30,7 @@ function TopBar({products}){
                         <i className="fas fa-search"></i>
                     </button>
                     <button onClick={handleOpenCart} className="header__icons--cart">
+                        <span className="cart__quantity">{quantity}</span>
                         <i className="fas fa-cart-plus"></i>
                     </button>
                 </div>
