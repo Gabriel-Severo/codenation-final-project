@@ -39,6 +39,13 @@ function Sale() {
     
     function handleAddCart(event) {
         event.preventDefault()
+        if(!selected){
+            document.querySelector('.sale__sizenotselected').classList.remove('hidden')
+            setTimeout(() => {
+                document.querySelector('.sale__sizenotselected').classList.add('hidden')
+            }, 5000)
+            return;
+        }
         let cont = cart.filter(cart=> {
             return cart.code_color === id && selected === cart.size
         })
@@ -64,7 +71,6 @@ function Sale() {
             <TopBar products={products}/>
             <div className="sale__box">
                 <div className="sale__image">
-                    {console.log(product)}
                     {product && <span className="discount">{product.discount_percentage}</span>}
                     <img src={product && product.image ? product.image : 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível'} alt="Produto"/>
                 </div>
@@ -84,6 +90,7 @@ function Sale() {
                             </>
                         }
                     </div>
+                    <span className="sale__sizenotselected hidden">Você não selecionou um tamanho para o produto.</span>
                     <div className="sale__sizes">
                         <span className="sizes__text">Escolha o tamanho</span>
                         <div className="sale__size__options">
