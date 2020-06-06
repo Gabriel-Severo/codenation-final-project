@@ -1,8 +1,8 @@
 const INITIAL_STATE = {
     products: [],
-    cart: [],
-    quantity: 0,
-    price: 0
+    cart: JSON.parse(window.localStorage.getItem('cart')) || [],
+    quantity: Number(window.localStorage.getItem('quantity')) || 0,
+    price: Number(window.localStorage.getItem('price')) || 0
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -12,18 +12,23 @@ function reducer(state = INITIAL_STATE, action) {
                 ...state,
                 products: action.payload
             }
-        case "SET_CART":
+        case "SET_CART": {
+            window.localStorage.setItem('cart', JSON.stringify(action.payload))
             return {
                 ...state,
-                cart: action.payload
+                cart:  action.payload
             }
+        }
         case "SET_QUANTITY": {
+            window.localStorage.setItem('quantity', action.payload)
+            window.localStorage.setItem('cart', JSON.stringify(state.cart))
             return {
                 ...state,
                 quantity: action.payload
             }
         }
         case "SET_PRICE": {
+            window.localStorage.setItem('price', action.payload)
             return {
                 ...state,
                 price: action.payload
