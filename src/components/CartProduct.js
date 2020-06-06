@@ -23,7 +23,6 @@ function CartProduct({product}) {
     function handleRemoveProduct(event) {
         event.preventDefault()
         dispatch(setQuantity(quantity-product.quantity))
-        console.log(cart)
         dispatch(setCart(cart.filter(cart => {
             return cart.code_color !== product.code_color || cart.size !== product.size
         })))

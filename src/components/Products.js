@@ -14,7 +14,8 @@ function Products({products}){
                         return (
                             <Link key={index} to={link}>
                                 <Product product={product}/>
-                            </Link>)
+                            </Link>
+                        )
                     })}
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import './Sale.css'
 import { useSelector, useDispatch } from 'react-redux'
 import TopBar from './TopBar'
-import {setCart, setQuantity, setPrice} from '../actions'
+import {setCart, setQuantity} from '../actions'
 
 
 function Sale() {
@@ -21,14 +21,6 @@ function Sale() {
         }
         setProduct(getProduct())
     }, [id, products])
-
-    useEffect(() => {
-        let price = 0
-        for(let p of cart){
-            price += parseFloat(p.actual_price.split('R$ ')[1].replace(',', '.')) * p.quantity
-        }
-        dispatch(setPrice(price))
-    }, [cart, dispatch, quantity])
 
     function handleSelected(event) {
         event.preventDefault()
