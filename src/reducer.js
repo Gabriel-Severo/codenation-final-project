@@ -2,7 +2,8 @@ const INITIAL_STATE = {
     products: [],
     cart: JSON.parse(window.localStorage.getItem('cart')) || [],
     quantity: Number(window.localStorage.getItem('quantity')) || 0,
-    price: Number(window.localStorage.getItem('price')) || 0
+    price: Number(window.localStorage.getItem('price')) || 0,
+    loading: false
 }
 
 function reducer(state = INITIAL_STATE, action) {
@@ -32,6 +33,12 @@ function reducer(state = INITIAL_STATE, action) {
             return {
                 ...state,
                 price: action.payload
+            }
+        }
+        case "SET_LOADING": {
+            return {
+                ...state,
+                loading: action.payload
             }
         }
         default:

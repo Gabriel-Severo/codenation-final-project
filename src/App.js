@@ -4,15 +4,16 @@ import './App.css';
 import Home from './components/Home'
 import Sale from './components/Sale'
 import { useDispatch } from 'react-redux'
-
-import { setProducts } from './actions'
+import { setProducts, setLoading } from './actions'
 
 function App() {
   const dispatch = useDispatch()
   useEffect( () => {
     async function getProducts(){
+        dispatch(setLoading(true))
         const products = await fetch('https://5e9935925eabe7001681c856.mockapi.io/api/v1/catalog').then(products => products.json())
         dispatch(setProducts(products))
+        dispatch(setLoading(false))
     }
     getProducts()
   }, [dispatch])

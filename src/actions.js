@@ -25,3 +25,10 @@ export function setPrice(price){
         payload: price
     }
 }
+
+export function setLoading(loading) {
+    return {
+        type: "SET_LOADING",
+        payload: loading
+    }
+}
