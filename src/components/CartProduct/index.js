@@ -31,7 +31,7 @@ function CartProduct({product}) {
     return (
         <div className="cart__product">
             <div className="cart__product__image">
-                <img className="product__image" src={product.image} alt="Produto"/>
+                <img className="product__image" src={product.image ? product.image : 'https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indispon%C3%ADvel'} alt="Produto"/>
             </div>
             <div className="cart__info">
                 <div className="cart__product__name">{product.name}</div>
