@@ -1,6 +1,6 @@
 import React from 'react'
-import './CartProduct.css'
-import {setQuantity, setCart} from '../actions'
+import './style.css'
+import {setQuantity, setCart} from '../../actions'
 import {useDispatch, useSelector} from 'react-redux'
 
 function CartProduct({product}) {

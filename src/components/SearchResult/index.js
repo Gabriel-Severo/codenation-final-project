@@ -1,5 +1,5 @@
 import React from 'react'
-import './SearchResult.css'
+import './style.css'
 function SearchResult({product}) {
     return (
         <div className="product__result">

@@ -1,7 +1,7 @@
 import React from 'react'
-import './TopBar.css'
-import Cart from './Cart'
-import Search from './Search'
+import './style.css'
+import Cart from '../Cart'
+import Search from '../Search'
 import { Link } from 'react-router-dom'
 import {useSelector} from 'react-redux'
 

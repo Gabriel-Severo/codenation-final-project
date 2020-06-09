@@ -1,6 +1,6 @@
 import React from 'react'
-import './Products.css'
-import Product from './Product'
+import './style.css'
+import Product from '../Product'
 import { Link } from 'react-router-dom'
 
 function Products({products}){

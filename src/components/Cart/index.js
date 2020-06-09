@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react'
-import './Cart.css'
-import CartProduct from './CartProduct'
+import './style.css'
+import CartProduct from '../CartProduct'
 import { useSelector, useDispatch } from 'react-redux'
-import { setPrice } from '../actions'
+import { setPrice } from '../../actions'
 function Cart() {
     const { cart, quantity, price } = useSelector(state => state)
     const dispatch = useDispatch()

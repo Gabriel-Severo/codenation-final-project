@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import './Search.css'
-import SearchResult from './SearchResult'
+import './style.css'
+import SearchResult from '../SearchResult'
 import {Link} from 'react-router-dom'
 
 function Search({allProducts}) {

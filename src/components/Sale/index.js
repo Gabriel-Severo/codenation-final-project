@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import './Sale.css'
+import './style.css'
 import { useSelector, useDispatch } from 'react-redux'
-import TopBar from './TopBar'
-import {setCart, setQuantity} from '../actions'
+import TopBar from '../TopBar'
+import {setCart, setQuantity} from '../../actions'
 
 
 function Sale() {
