@@ -56,3 +56,12 @@
     right: -100% !important;
     opacity: 0;
 }
+
+@media (max-width: 960px){
+    .search__modal {
+        width: 100%;
+    }
+    .search__results {
+        width: 100%;
+    }
+}

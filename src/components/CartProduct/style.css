@@ -65,3 +65,13 @@
     cursor: pointer;
     outline: none;
 }
+
+@media (max-width: 960px) {
+    .cart__product {
+        width: 95%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .cart__prices, .cart__remove__item {
+        text-align: left;
+    }
+}

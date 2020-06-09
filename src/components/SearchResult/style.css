@@ -34,3 +34,13 @@
     margin: 10px auto;
     color: #0f0f0f88;
 }
+
+@media (max-width: 960px){
+    .product__result {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 95%;
+    }
+    .product__result__price, .product__result__installments{
+        text-align: left;
+    }
+}
