@@ -9,6 +9,10 @@
     position: relative;
 }
 
+.sale__image img {
+    width: 100%;
+}
+
 .sale__info {
     margin-left: 10px;
 }
@@ -72,4 +76,17 @@
 
 .hidden {
     display: none;
+}
+
+@media (max-width: 960px) {
+    .sale__box {
+        display: block;
+        width: 98%;
+    }
+    .sale__addcart {
+        width: 100%;
+    }
+    .sale__info {
+        margin-left: 0;
+    }
 }
